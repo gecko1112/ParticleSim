@@ -26,10 +26,10 @@ void drawVelocityIndicator(sf::RenderTarget& target,
 int main() {
     constexpr   int   W = 1920, H = 1080;
 
-    const       float grabRadius = 200.f;
-    const       float throwScale = 0.1f;
+    const       float grabRadius = 100.f;
+    const       float throwScale = 0.01f;
 
-    const       float throwVecScale = 1.f;
+    const       float throwVecScale = 7.5f;
 
     // create the main window
     sf::RenderWindow window{{W, H}, "Verlet Drag & Throw"};
@@ -37,7 +37,7 @@ int main() {
 
     // set up the view to match the initial window size (world coordinates)
     sf::View view(sf::FloatRect(0, 0, float(W), float(H)));
-    window.setView(view); // << this locks the coordinate space
+    window.setView(view); // locks the coordinate space
 
     Solver   solver{float(W), float(H)};
     Renderer renderer{window};
@@ -119,6 +119,7 @@ int main() {
                     auto& first = dragSamples.front();
                     auto& last  = dragSamples.back();
                     sf::Vector2f deltaPos = last.pos - first.pos;
+
                     float deltaTime = last.time - first.time;
                     if (deltaTime < 1e-4f) deltaTime = 1e-4f;
 

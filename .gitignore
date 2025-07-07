@@ -32,3 +32,6 @@ Makefile
 **/CMakeCache.txt
 **/ParticleSim
 **/progress.marks
+
+# vscode
+.vscode/
