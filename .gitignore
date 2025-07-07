@@ -1,3 +1,34 @@
-.vscode/
-build/
+# CMake build artifacts
+/build/
 CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# IDE / OS files
+*.DS_Store
+*.swp
+*.swo
+
+# backup and temporary files
+*~
+*.bak
+*.tmp
+*.log
+
+# compiled binaries
+*.o
+*.obj
+*.exe
+*.out
+*.a
+*.so
+*.dll
+
+# all output from builds (inside any folder)
+**/CMakeFiles/
+**/Makefile
+**/cmake_install.cmake
+**/CMakeCache.txt
+**/ParticleSim
+**/progress.marks
